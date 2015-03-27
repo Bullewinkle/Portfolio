@@ -93,5 +93,6 @@ function onListening() {
     address = addr.address
   }
   debug('Listening on ' + bind);
-  console.log('Listening on '+ address +  addr.port)
+  console.log('Hello!!!');
+  console.log('Listening on '+ address +  addr.port);
 }
