@@ -1,0 +1,756 @@
+[
+    {
+        "districtName": "Central",
+        "regions": [
+            {
+            	"regionName" : "RU-BEL",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-BRY",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-IVA",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KLU",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KOS",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KRS",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-LIP",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-MOS",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-MOW",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": [
+                    {
+                        "cityName": "Москва",
+                        "lat": "55.7522200",
+                        "lon": "37.6155600",
+                        "link" : "http://www.google.com"
+                    }
+                ]
+            },
+            {
+            	"regionName" : "RU-ORL",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-RYA",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-SMO",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-TAM",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-TUL",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-TVE",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-VLA",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-VOR",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": [
+                    {
+                        "cityName": "Воронеж",
+                        "lat": "51.6699000",
+                        "lon": "39.1922700",
+                        "link" : "http://www.google.com"
+                    }
+                ]
+            },
+            {
+            	"regionName" : "RU-YAR",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            }
+        ],
+        "color": "#FAFA57"
+    },
+    {
+        "districtName": "Far_Eastern",
+        "regions": [
+            {
+            	"regionName" : "RU-AMU",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-CHU",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KAM",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KHA",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-MAG",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-PRI",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": [
+                    {
+                        "cityName": "Владивосток",
+                        "lat": "43.116666676667",
+                        "lon": "131.90000001",
+                        "link" : "http://www.google.com"
+                    }
+                ]
+            },
+            {
+            	"regionName" : "RU-SA",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-SAK",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-YEV",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            }
+        ],
+        "color": "#FECE2C"
+    },
+    {
+        "districtName": "Northcaucasian",
+        "regions": [
+            {
+            	"regionName" : "RU-CE",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+             {
+            	"regionName" : "RU-CE & RU-IN",
+                "link" : "http://www.yandex.ru",
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-DA",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-IN",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KB",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KC",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-SE",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-STA",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            }
+        ],
+        "color": "#AA6CA6"
+    },
+    {
+        "districtName": "Northwestern",
+        "regions": [
+            {
+            	"regionName" : "RU-ARK",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KGD",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KO",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KR",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-LEN",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-MUR",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-NEN",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-NGR",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-PSK",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-SPE",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": [
+                    {
+                        "cityName": "Санкт-Петербург",
+                        "lat": "59.8944400",
+                        "lon": "30.2641700",
+                        "link" : "http://www.google.com"
+                    }
+                ]
+            },
+            {
+            	"regionName" : "RU-VLG",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            }
+        ],
+        "color": "#62D2C5"
+    },
+    {
+        "districtName": "Siberia",
+        "regions": [
+            {
+            	"regionName" : "RU-AL",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-ALT",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-BU",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-IRK",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KEM",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KK",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KYA",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": [
+                    {
+                        "cityName": "Красноярск",
+                        "lat": "56.0097200",
+                        "lon": "92.7916700",
+                        "link" : "http://www.google.com"
+                    },
+                    {
+                        "cityName": "Лесосибирск",
+                        "lat": "58.233",
+                        "lon": "92.483",
+                        "link" : "http://www.google.com"
+                    }
+
+                ]
+            },
+            {
+            	"regionName" : "RU-NVS",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": [
+                    {
+                        "cityName": "Новосибирск",
+                        "lat": "55.0411100",
+                        "lon": "82.9344400",
+                        "link" : "http://www.google.com"
+                    }
+                ]
+            },
+            {
+            	"regionName" : "RU-OMS",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": [
+                    {
+                        "cityName": "Омск",
+                        "lat": "55.0000000",
+                        "lon": "73.4000000",
+                        "link" : "http://www.google.com"
+                    }
+                ]
+            },
+            {
+            	"regionName" : "RU-TOM",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-TY",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-ZAB",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            }
+        ],
+        "color": "#01BEE7"
+    },
+    {
+        "districtName": "Southern",
+        "regions": [
+            {
+            	"regionName" : "RU-AD",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-AST",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KDA",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KL",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-ROS",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": [
+                    {
+                        "cityName": "Ростов-на-Дону",
+                        "lat": "47.2363900",
+                        "lon": "39.7138900",
+                        "link" : "http://www.google.com"
+                    }
+                ]
+            },
+            {
+            	"regionName" : "RU-VGG",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": [
+                    {
+                        "cityName": "Волгоград",
+                        "lat": "48.8047200",
+                        "lon": "44.5858300",
+                        "link" : "http://www.google.com"
+                    }
+                ]
+            }
+        ],
+        "color": "#FC8B8B"
+    },
+    {
+        "districtName": "Urals",
+        "regions": [
+            {
+            	"regionName" : "RU-CHE",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": [
+                    {
+                        "cityName": "Челябинск",
+                        "lat": "55.1544400",
+                        "lon": "61.4297200",
+                        "link" : "http://www.google.com"
+                    }
+                ]
+            },
+            {
+            	"regionName" : "RU-KGN",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KHM",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-SVE",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": [
+                    {
+                        "cityName": "Екатеринбург",
+                        "lat": "56.8575000",
+                        "lon": "60.6125000",
+                        "link" : "http://www.google.com"
+                    }
+                ]
+            },
+            {
+            	"regionName" : "RU-TYU",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-YAN",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            }
+        ],
+        "color": "#C7CB8F"
+    },
+    {
+        "districtName": "Volga",
+        "regions": [
+            {
+            	"regionName" : "RU-BA",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": [
+                    {
+                        "cityName": "Уфа",
+                        "lat": "54.7750000",
+                        "lon": "56.0375000",
+                        "link" : "http://www.google.com"
+                    }
+                ]
+            },
+            {
+            	"regionName" : "RU-CU",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-KIR",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-ME",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-MO",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-NIZ",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": [
+                    {
+                        "cityName": "Нижний Новгород",
+                        "lat": "56.3286700",
+                        "lon": "44.0020500",
+                        "link" : "http://www.google.com"
+                    }
+                ]
+            },
+            {
+            	"regionName" : "RU-ORE",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-PER",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": [
+                    {
+                        "cityName": "Пермь",
+                        "lat": "58.0000000",
+                        "lon": "56.2500000",
+                        "link" : "http://www.google.com"
+                    }
+                ]
+            },
+            {
+            	"regionName" : "RU-PNZ",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-SAM",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": [
+                    {
+                        "cityName": "Самара",
+                        "lat": "53.2000000",
+                        "lon": "50.1500000",
+                        "link" : "http://www.google.com"
+                    }
+                ]
+            },
+            {
+            	"regionName" : "RU-SAR",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-TA",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": [
+                    {
+                        "cityName": "Казань",
+                        "lat": "55.7877000",
+                        "lon": "49.1248000",
+                        "link" : "http://www.google.com"
+                    }
+                ]
+            },
+            {
+            	"regionName" : "RU-UD",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            },
+            {
+            	"regionName" : "RU-ULY",
+                "link" : "http://www.yandex.ru",
+
+                "shape": [],
+                "cities": []
+            }
+        ],
+        "color": "#37CE04"
+    }
+]
