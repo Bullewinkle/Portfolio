@@ -18,14 +18,14 @@
   top: 0;
   width: 240px;
   height: 303px;
-}
-.banner_bg_stars1 {
+  background: url("./sprite.png") no-repeat -8px -789px;
   -webkit-transform: translate(100%, 0);
   -moz-transform: translate(100%, 0);
   -o-transform: translate(100%, 0);
   -ms-transform: translate(100%, 0);
   transform: translate(100%, 0);
-  background: url("./sprite.png") no-repeat -8px -789px;
+}
+.banner_bg_stars1 {
   -webkit-animation: stars 16s linear infinite;
   -moz-animation: stars 16s linear infinite;
   -o-animation: stars 16s linear infinite;
@@ -33,17 +33,11 @@
   animation: stars 16s linear infinite;
 }
 .banner_bg_stars2 {
-  -webkit-transform: translate(100%, 0);
-  -moz-transform: translate(100%, 0);
-  -o-transform: translate(100%, 0);
-  -ms-transform: translate(100%, 0);
-  transform: translate(100%, 0);
-  background: url("./sprite.png") no-repeat -248px -789px;
-  -webkit-animation: stars 16s linear infinite 2s;
-  -moz-animation: stars 16s linear infinite 2s;
-  -o-animation: stars 16s linear infinite 2s;
-  -ms-animation: stars 16s linear infinite 2s;
-  animation: stars 16s linear infinite 2s;
+  -webkit-animation: stars 16s linear infinite 8s;
+  -moz-animation: stars 16s linear infinite 8s;
+  -o-animation: stars 16s linear infinite 8s;
+  -ms-animation: stars 16s linear infinite 8s;
+  animation: stars 16s linear infinite 8s;
 }
 .banner_bg_gradient {
   position: absolute;
@@ -255,6 +249,7 @@
   -ms-animation: badge 12s infinite ease-in-out;
   animation: badge 12s infinite ease-in-out;
 }
+
 @-moz-keyframes stars {
   0% {
     -webkit-transform: translate(100%, 0);
