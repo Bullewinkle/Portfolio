@@ -73,9 +73,9 @@ path {
 div.tooltip {
 	position: absolute;
 	text-align: center;
-	min-width: 130px;
-	padding: 3px 6px;
-	font-size: 14px;
+	min-width: 100px;
+	padding: 2px 4px;
+	font-size: 12px;
 	background: #FFFFFF;
 	border: 1px;
 	border-radius: 4px;

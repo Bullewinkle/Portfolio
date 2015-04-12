@@ -534,7 +534,6 @@
 
 
 		/* Drowind with d3.data */
-		console.log(Russia)
 		var districts = svg.append('g')
 		.attr({
 			'class': 'districts',
@@ -556,7 +555,6 @@
 		.on('mouseleave', 	districtCallbacks.mouseleave )
 		.on('click',		districtCallbacks.click )
 		.each(function(d) {
-				console.log(d)
 			d3.select(this).append('g').attr({
 				'class': 'markers',
 			})
