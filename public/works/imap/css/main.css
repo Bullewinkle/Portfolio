@@ -2,6 +2,12 @@
 body {
 	font-family: Arial, sans-serif;
 }
+.title {
+	text-align: center;
+}
+ul {
+	list-style: none;
+}
 
 svg {
 	display: block;
@@ -10,12 +16,7 @@ svg {
 #map-wrapper {
 	width: 722px;
 	height: 560px;
-	position: absolute;
-	margin: auto;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	margin: 0 auto;
 }
 
 path {

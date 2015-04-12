@@ -6,11 +6,13 @@
 	var markerIconPath = 'sources/red-marker.svg'
 	var zoomOutIconPath = 'sources/zoom-out.svg'
 
-	var mapWrapper = d3.select("body")
-		.append('div').attr('id','map-wrapper')
+	var mapWrapper = d3.select("#map-wrapper")
 
 	tooltip = mapWrapper.append("div")
 		.attr("class", "tooltip")
+
+	var toString = {}.toString
+
 	var svg = mapWrapper
 	.append("svg")
 	.attr({
@@ -82,6 +84,29 @@
 	function ready(error, map, Russia, dictionary) {
 
 		var mapShapes = topojson.object(map, map.objects.russia).geometries;
+
+		/* Preparing received data for drawing the map */
+		prepareRussiaDataObject = function () {
+			for (var i = 0; i < mapShapes.length; i++) {
+				var region = mapShapes[i].properties.region;
+				var currentShape = mapShapes[i];
+				for (var i2 = 0; i2 < Russia.length; i2++) {
+
+					for (var i3 = 0; i3 < Russia[i2].regions.length; i3++) {
+						if (!Russia[i2].regions[i3].shape) Russia[i2].regions[i3].shape = []
+						if (Russia[i2].regions[i3].regionName == region) {
+							var pathCords = path(currentShape);
+							if (pathCords) {
+								Russia[i2].regions[i3].shape.push(path(currentShape));
+							}
+						}
+					}
+				}
+			};
+			return Russia
+		}
+		Russia = prepareRussiaDataObject()
+		/* Object Russia is ready */
 
 		function showDistrictsWithCities () {
 			d3.selectAll('#map-Russia > .markers .with_cities_marker').each(function (data,index) {
@@ -507,25 +532,9 @@
 			}
 		};
 
-		/* Preparing received data for drawing the map */
-		for (var i = 0; i < mapShapes.length; i++) {
-			var reg = mapShapes[i].properties.region;
-			var currentShape = mapShapes[i];
-			for (var i2 = 0; i2 < Russia.length; i2++) {
-
-				for (var i3 = 0; i3 < Russia[i2].regions.length; i3++) {
-					if (Russia[i2].regions[i3].regionName == reg) {
-						var pathCords = path(currentShape);
-						if (pathCords !== undefined) {
-							Russia[i2].regions[i3].shape.push(path(currentShape));
-						}
-					}
-				}
-			}
-		};
-		/* Object Russia is ready */
 
 		/* Drowind with d3.data */
+		console.log(Russia)
 		var districts = svg.append('g')
 		.attr({
 			'class': 'districts',
@@ -547,6 +556,7 @@
 		.on('mouseleave', 	districtCallbacks.mouseleave )
 		.on('click',		districtCallbacks.click )
 		.each(function(d) {
+				console.log(d)
 			d3.select(this).append('g').attr({
 				'class': 'markers',
 			})

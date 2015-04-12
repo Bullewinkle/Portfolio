@@ -6,63 +6,54 @@
             	"regionName" : "RU-BEL",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-BRY",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-IVA",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KLU",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KOS",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KRS",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-LIP",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-MOS",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-MOW",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": [
                     {
                         "cityName": "Москва",
@@ -76,56 +67,48 @@
             	"regionName" : "RU-ORL",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-RYA",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-SMO",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-TAM",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-TUL",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-TVE",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-VLA",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-VOR",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": [
                     {
                         "cityName": "Воронеж",
@@ -139,7 +122,6 @@
             	"regionName" : "RU-YAR",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             }
         ],
@@ -152,42 +134,36 @@
             	"regionName" : "RU-AMU",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-CHU",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KAM",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KHA",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-MAG",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-PRI",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": [
                     {
                         "cityName": "Владивосток",
@@ -201,21 +177,18 @@
             	"regionName" : "RU-SA",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-SAK",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-YEV",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             }
         ],
@@ -228,55 +201,47 @@
             	"regionName" : "RU-CE",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
              {
             	"regionName" : "RU-CE & RU-IN",
                 "link" : "http://www.yandex.ru",
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-DA",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-IN",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KB",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KC",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-SE",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-STA",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             }
         ],
@@ -289,70 +254,60 @@
             	"regionName" : "RU-ARK",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KGD",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KO",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KR",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-LEN",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-MUR",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-NEN",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-NGR",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-PSK",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-SPE",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": [
                     {
                         "cityName": "Санкт-Петербург",
@@ -366,7 +321,6 @@
             	"regionName" : "RU-VLG",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             }
         ],
@@ -379,49 +333,42 @@
             	"regionName" : "RU-AL",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-ALT",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-BU",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-IRK",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KEM",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KK",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KYA",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": [
                     {
                         "cityName": "Красноярск",
@@ -442,7 +389,6 @@
             	"regionName" : "RU-NVS",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": [
                     {
                         "cityName": "Новосибирск",
@@ -456,7 +402,6 @@
             	"regionName" : "RU-OMS",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": [
                     {
                         "cityName": "Омск",
@@ -470,21 +415,18 @@
             	"regionName" : "RU-TOM",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-TY",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-ZAB",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             }
         ],
@@ -497,35 +439,30 @@
             	"regionName" : "RU-AD",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-AST",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KDA",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KL",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-ROS",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": [
                     {
                         "cityName": "Ростов-на-Дону",
@@ -539,7 +476,6 @@
             	"regionName" : "RU-VGG",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": [
                     {
                         "cityName": "Волгоград",
@@ -559,7 +495,6 @@
             	"regionName" : "RU-CHE",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": [
                     {
                         "cityName": "Челябинск",
@@ -573,21 +508,18 @@
             	"regionName" : "RU-KGN",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KHM",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-SVE",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": [
                     {
                         "cityName": "Екатеринбург",
@@ -601,14 +533,12 @@
             	"regionName" : "RU-TYU",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-YAN",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             }
         ],
@@ -621,7 +551,6 @@
             	"regionName" : "RU-BA",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": [
                     {
                         "cityName": "Уфа",
@@ -635,35 +564,30 @@
             	"regionName" : "RU-CU",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-KIR",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-ME",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-MO",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-NIZ",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": [
                     {
                         "cityName": "Нижний Новгород",
@@ -677,14 +601,12 @@
             	"regionName" : "RU-ORE",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-PER",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": [
                     {
                         "cityName": "Пермь",
@@ -698,14 +620,12 @@
             	"regionName" : "RU-PNZ",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-SAM",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": [
                     {
                         "cityName": "Самара",
@@ -719,14 +639,12 @@
             	"regionName" : "RU-SAR",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-TA",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": [
                     {
                         "cityName": "Казань",
@@ -740,14 +658,12 @@
             	"regionName" : "RU-UD",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             },
             {
             	"regionName" : "RU-ULY",
                 "link" : "http://www.yandex.ru",
 
-                "shape": [],
                 "cities": []
             }
         ],
