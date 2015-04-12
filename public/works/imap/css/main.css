@@ -56,11 +56,11 @@ path {
 	fill: #f00;
 }
 
-.with_cityes_marker {
+.with_cities_marker {
 	pointer-events: none;
 }
 
-.with_cityes_marker_image {
+.with_cities_marker_image {
 	opacity: 0;
 	display: none;
 }
