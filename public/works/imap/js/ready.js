@@ -1,3 +1,10 @@
+/*	TODO
+	[]	-	Fix zoomIn(235) and zoomOut(394) functions
+	[]	-	Optimaze zoomIn(235) and zoomOut(394) functions, especially zoomIn
+	[]	-	Make zoomOut by click outside
+	[]	-	Remove zoomOut button
+*/
+
 var GLOBAL = window;
 
 (function (GLOBAL) {
@@ -105,102 +112,102 @@ var GLOBAL = window;
 				return [bbox.x + bbox.width/2, bbox.y + bbox.height/2];
 			}
 		};
-		this.common = {
+		this.map = {
 			showDistrictsWithCities: function showDistrictsWithCities () {
 				d3.selectAll('#map-Russia > .markers .with_cities_marker').each(function (data,index) {
-				var marker = d3.select(this)
-				var delay = 20*((index+1)*index/3)
-				marker
-				.attr({
-					'transform' : function (d) {
-						return 'translate('+ (d[0]) +','+(d[1] -25 -100) +')';
-					}
-				})
-				.select('.with_cities_marker_image')
-				.attr({
-					'transform' : 'translate(-18,0)'
-				})
-				.style({
-					'display' : 'block'
-				})
-				.transition()
-				.delay(delay)
-				.duration(attributes.common.baseDuration*2)
-				.style('opacity',1)
+					var marker = d3.select(this)
+					var delay = 20*((index+1)*index/3)
+					marker
+						.attr({
+							'transform' : function (d) {
+								return 'translate('+ (d[0]) +','+(d[1] -25 -100) +')';
+							}
+						})
+						.select('.with_cities_marker_image')
+						.attr({
+							'transform' : 'translate(-18,0)'
+						})
+						.style({
+							'display' : 'block'
+						})
+						.transition()
+						.delay(delay)
+						.duration(attributes.common.baseDuration*2)
+						.style('opacity',1)
 
-				marker
-				.transition()
-				.delay(delay)
-				.duration(attributes.common.baseDuration*2)
-				.attr({
-					'transform' : function (d) {
-						return 'translate('+ (d[0]) +','+(d[1] -25) +')';
-					}
+					marker
+						.transition()
+						.delay(delay)
+						.duration(attributes.common.baseDuration*2)
+						.attr({
+							'transform' : function (d) {
+								return 'translate('+ (d[0]) +','+(d[1] -25) +')';
+							}
+						})
 				})
-			})
 			},
 			hideDistrictsWithCities: function hideDistrictsWithCities () {
 				d3.selectAll('#map-Russia > .markers .with_cities_marker > .with_cities_marker_image')
-				.transition()
-				.duration(attributes.common.baseDuration*2)
-				.attr({
-					'transform' : function (d) {
-						return '';
-					}
-				})
-				.style('opacity',0)
-				.delay(10)
-				.each('end',function (d) {
-					d3.select(this).style('display','none')
-				})
+					.transition()
+					.duration(attributes.common.baseDuration*2)
+					.attr({
+						'transform' : function (d) {
+							return '';
+						}
+					})
+					.style('opacity',0)
+					.delay(10)
+					.each('end',function (d) {
+						d3.select(this).style('display','none')
+					})
 			},
 			showRegionsWithCities: function showRegionsWithCities (element) {
 				element.selectAll('.markers .with_cities_marker').each(function (d,index) {
 					var marker = d3.select(this)
 					var coords = d.coords
 					marker
-					.attr({
-						transform : function (d) {
-							return 'translate('+ (coords[0])+',' + (coords[1] - 50 ) +')' + 'scale('+( 1/ d3.select(this.parentNode.parentNode).datum().zoomValue)+')'
-						}
-					})
-					.select('.with_cities_marker_image')
-					.attr({
-						'transform' : 'translate(-21,-35)'
-					})
-					.style({
-						'display' : 'block'
-					})
-					.transition()
-					.delay(function (d,i) {
-						return 10*(index+1)
-					})
-					.duration(attributes.common.baseDuration*2 + 100)
-					.style('opacity',1)
+						.attr({
+							transform : function (d) {
+								return 'translate('+ (coords[0])+',' + (coords[1] - 50 ) +')' + 'scale('+( 1/ d3.select(this.parentNode.parentNode).datum().zoomValue)+')'
+							}
+						})
+						.select('.with_cities_marker_image')
+						.attr({
+							'transform' : 'translate(-21,-35)'
+						})
+						.style({
+							'display' : 'block'
+						})
+						.transition()
+						.delay(function (d,i) {
+							return 10*(index+1)
+						})
+						.duration(attributes.common.baseDuration*2 + 100)
+						.style('opacity',1)
 
 					marker
-					.transition()
-					.delay(function (d,i) {
-						return 10*(index+1)
-					})
-					.duration(attributes.common.baseDuration*2 + 100)
-					.attr({
-						transform : function (d) {
-							return  'translate('+ (coords[0])+',' + (coords[1]-1) +')' + 'scale('+( 1/ d3.select(this.parentNode.parentNode).datum().zoomValue)+')'
-						}
-					})
+						.transition()
+						.delay(function (d,i) {
+							return 10*(index+1)
+						})
+						.duration(attributes.common.baseDuration*2 + 100)
+						.attr({
+							transform : function (d) {
+								return  'translate('+ (coords[0])+',' + (coords[1]-1) +')' + 'scale('+( 1/ d3.select(this.parentNode.parentNode).datum().zoomValue)+')'
+							}
+						})
 				})
 			},
 			hideRegionsWithCities: function hideRegionsWithCities (element) {
 
 				svg.selectAll('.district.with_cities > .markers .with_cities_marker_image')
-				.transition()
-				.duration(attributes.common.baseDuration*2)
-				.style('opacity',0)
-				.delay(10)
-				.each('end',function (d) {
-					d3.select(this).style('display','none')
-				})
+					.transition()
+					.duration(attributes.common.baseDuration*2)
+					.style('opacity',0)
+					.delay(10)
+					.each('end',function (d) {
+						d3.select(this).style('display','none')
+					})
 			},
 			showCities: function showCities (element) {
 				var currentCities = element.selectAll('.city')
@@ -212,20 +219,20 @@ var GLOBAL = window;
 						currentCity.style('display','block')
 					} else {
 						currentCity.style('display','block')
-						.selectAll('.city_link')
-						.attr({
-							transform: function (d) {
-								var parentDistrict = d3.select(this.parentNode.parentNode.parentNode.parentNode)
-								return 'scale('+( 1/parentDistrict.datum().zoomValue )+')' + 'scale('+( 1/element.datum().zoomValue )+')'
-							}
-						})
-						.datum().resized = true
+							.selectAll('.city_link')
+							.attr({
+								transform: function (d) {
+									var parentDistrict = d3.select(this.parentNode.parentNode.parentNode.parentNode)
+									return 'scale('+( 1/parentDistrict.datum().zoomValue )+')' + 'scale('+( 1/element.datum().zoomValue )+')'
+								}
+							})
+							.datum().resized = true
 					}
 				})
 			},
 			hideCities: function hideCities (element) {
 				element.selectAll('.city')
-				.style('display','none')
+					.style('display','none')
 			},
 			zoomIn: function zoomIn (element) {
 				if ( element.classed('district') && element.datum().zoom !== 2 ) { // zoom level 2
@@ -247,14 +254,14 @@ var GLOBAL = window;
 					for ( var i = 0; i < elSiblings.length; i++ ) {
 						if ( elSiblings[i] !== element.node() && elSiblings[i].id !== 'zoomOutButton') {
 							d3.select(elSiblings[i])
-							.transition()
-							.duration(240)
-							.style({
-								'opacity' : 0
-							})
-							.each('end',function () {
-								d3.select(this).style('display','none')
-							})
+								.transition()
+								.duration(240)
+								.style({
+									'opacity' : 0
+								})
+								.each('end',function () {
+									d3.select(this).style('display','none')
+								})
 						}
 					}
 
@@ -276,42 +283,42 @@ var GLOBAL = window;
 					element.datum().zoomValue = coefficent
 
 
-					functions.common.hideDistrictsWithCities()
-					functions.common.showRegionsWithCities(element)
+					functions.map.hideDistrictsWithCities()
+					functions.map.showRegionsWithCities(element)
 					svg.currentZoomedElement = element
 					element.datum().zoom = 2
 
 					moveX = (svgCenter[0] - elCenter[0]* coefficent) ;
 					moveY = (svgCenter[1] - elCenter[1]* coefficent) ;
 					element.classed('zoom_2',true)
-					.transition()
-					.duration(300)
-					.attr({
-						'transform': function () {
-							return 'translate('+ moveX +','+ moveY +')scale('+ coefficent +')'
-						},
-						'fill': function (d) {
-							return d.color
-						}
-					})
-					.selectAll('.city_link')
+						.transition()
+						.duration(300)
+						.attr({
+							'transform': function () {
+								return 'translate('+ moveX +','+ moveY +')scale('+ coefficent +')'
+							},
+							'fill': function (d) {
+								return d.color
+							}
+						})
+						.selectAll('.city_link')
 
 					setTimeout(function () {
 						element.selectAll('path')
-						.transition().duration(attributes.common.baseDuration)
-						.style({
-							'stroke': '#fff',
-							'stroke-width': '1px'
-						})
+							.transition().duration(attributes.common.baseDuration)
+							.style({
+								'stroke': '#fff',
+								'stroke-width': '1px'
+							})
 					},100)
 					zoomOutButton
-					.style('display','block')
-					.transition()
-					.duration(200)
-					.style('opacity','1')
+						.style('display','block')
+						.transition()
+						.duration(200)
+						.style('opacity','1')
 				} else if ( element.classed('region') && element.datum().zoom !== 3 ) { // zoom level 3
 
-					functions.common.hideRegionsWithCities()
+					functions.map.hideRegionsWithCities()
 					svg.currentZoomedElement = element
 					element.datum().zoom = 3
 
@@ -332,14 +339,14 @@ var GLOBAL = window;
 					for ( var i = 0; i < elSiblings.length; i++ ) {
 						if ( elSiblings[i] !== element.node()) {
 							d3.select(elSiblings[i])
-							.transition()
-							.duration(240)
-							.style({
-								'opacity' : 0
-							})
-							.each('end',function () {
-								d3.select(this).style('display','none')
-							})
+								.transition()
+								.duration(240)
+								.style({
+									'opacity' : 0
+								})
+								.each('end',function () {
+									d3.select(this).style('display','none')
+								})
 						}
 					}
 
@@ -364,26 +371,26 @@ var GLOBAL = window;
 					moveY = -(elCenter[1])*(coefficent-1) + (svgCenter[1] - elCenter[1]);
 
 					element.classed('zoom_3',true)
-					.transition()
-					.duration(300)
-					.attr({
-						'transform': function () {
-							return 'translate('+ moveX +','+ moveY +')scale('+ coefficent +')'
-						},
-						'fill': function (d) {
-							return d.color
-						}
-					})
+						.transition()
+						.duration(300)
+						.attr({
+							'transform': function () {
+								return 'translate('+ moveX +','+ moveY +')scale('+ coefficent +')'
+							},
+							'fill': function (d) {
+								return d.color
+							}
+						})
 
 					setTimeout(function () {
 						element.selectAll('path')
-						.transition().duration(attributes.common.baseDuration)
-						.style({
-							'stroke': '#fff',
-							'stroke-width': '0'
-						})
+							.transition().duration(attributes.common.baseDuration)
+							.style({
+								'stroke': '#fff',
+								'stroke-width': '0'
+							})
 					},100)
-					setTimeout(functions.common.showCities(element),200)
+					setTimeout(functions.map.showCities(element),200)
 				}
 			},
 			zoomOut: function zoomOut () {
@@ -394,34 +401,34 @@ var GLOBAL = window;
 					for ( var i = 0; i < elSiblings.length; i++ ) {
 						if ( elSiblings[i] !== svg.currentZoomedElement.node() && elSiblings[i].id !== 'zoomOutButton') {
 							d3.select(elSiblings[i])
-							.style('display','block')
-							.transition()
-							.duration(240)
-							.style({
-								'opacity' : 1
-							})
+								.style('display','block')
+								.transition()
+								.duration(240)
+								.style({
+									'opacity' : 1
+								})
 						} else if ( elSiblings[i] === svg.currentZoomedElement.node()) {
 
 						}
 					}
 
 					svg.currentZoomedElement
-					.transition()
-					.duration(300)
-					.attr({
-						'transform': 'translate(0,0)scale(1)',
-						'fill': function (d) {
-							return d.color
-						}
-					})
+						.transition()
+						.duration(300)
+						.attr({
+							'transform': 'translate(0,0)scale(1)',
+							'fill': function (d) {
+								return d.color
+							}
+						})
 
 					setTimeout(function () {
 						svg.currentZoomedElement.selectAll('path')
-						.transition().duration(attributes.common.baseDuration)
-						.style({
-							'stroke': '#fff',
-							'stroke-width': '1px'
-						})
+							.transition().duration(attributes.common.baseDuration)
+							.style({
+								'stroke': '#fff',
+								'stroke-width': '1px'
+							})
 					},100)
 
 					if (  svg.currentZoomedElement.datum().zoom === 3  ) {
@@ -437,26 +444,26 @@ var GLOBAL = window;
 						svg.currentZoomedElement.classed('zoom_2',false)
 						setTimeout(function () {
 							svg.currentZoomedElement.selectAll('path')
-							.transition().duration(attributes.common.baseDuration)
-							.style({
-								'stroke': '#fff',
-								'stroke-width': '0'
-							})
+								.transition().duration(attributes.common.baseDuration)
+								.style({
+									'stroke': '#fff',
+									'stroke-width': '0'
+								})
 						},100)
 						showDistrictsWithCities()
 
 						zoomOutButton
-						.transition()
-						.duration(200)
-						.style('opacity','0')
-						.each('end',function () {
-							d3.select(this)
-							.style('display','none')
-						})
+							.transition()
+							.duration(200)
+							.style('opacity','0')
+							.each('end',function () {
+								d3.select(this)
+									.style('display','none')
+							})
 					}
 				}
 			}
-		};
+		}
 		this.districtCallbacks = {
 			mouseenter: function (dictionary) {
 				return function(d) {
@@ -480,7 +487,7 @@ var GLOBAL = window;
 				var _this = d3.select(this)
 				_this.target = d3.select(d3.event.target.parentNode)
 				if ( !_this.classed('zoom_2') ) {
-					functions.common.zoomIn(_this)
+					functions.map.zoomIn(_this)
 				}
 			}
 		};
@@ -523,7 +530,7 @@ var GLOBAL = window;
 
 				if ( !_this.parent.classed('zoom_2') ) { return false } else {
 					this.parentNode.appendChild(this);
-					functions.common.zoomIn(_this)
+					functions.map.zoomIn(_this)
 				}
 			}
 		};
@@ -694,7 +701,7 @@ var GLOBAL = window;
 				markersGroup.node().appendChild(this)
 			})
 
-			functions.common.showDistrictsWithCities();
+			functions.map.showDistrictsWithCities();
 
 
 		};
@@ -731,7 +738,7 @@ var GLOBAL = window;
 			'cursor': 'pointer'
 		})
 		.on({
-			'click': functions.common.zoomOut
+			'click': functions.map.zoomOut
 		});
 
 	var projection = d3.geo.albers()
@@ -746,7 +753,7 @@ var GLOBAL = window;
 	for (f in functions.d3) d3[f] = functions.d3[f]
 	//INIT UI END
 
-	/* Reading map file and data, then START */
+	//Reading map file and data, then START
 	queue()
 		.defer(d3.json, "./sources/russia_1e-7sr.json")
 		.defer(d3.json, "./sources/rus_structure_d3data.json")
