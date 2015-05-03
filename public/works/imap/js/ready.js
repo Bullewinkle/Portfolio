@@ -1,7 +1,6 @@
 var GLOBAL = window;
 
 (function (GLOBAL) {
-	var mapWrapper = d3.select("#map-wrapper")
 
 	//DEFINE
 	function IMap () {
@@ -39,7 +38,7 @@ var GLOBAL = window;
 		this.tooltip = {
 			el: "div",
 			attrs: {
-				className: "tooltip"
+				class: "tooltip"
 
 			}
 
@@ -61,19 +60,21 @@ var GLOBAL = window;
 
 	function Functions () {
 		this.svg = {
-			onMouseMove: function () {
-				if (d3.event.target.nodeName == 'path' || d3.event.target.nodeName == 'g') {
-					tooltip.style({
-						'opacity': 0.8,
-						'top': d3.event.layerY + 20 + 'px',
-						'left': d3.event.layerX + 20 + 'px'
-					})
-				} else {
-					tooltip.style({
-						'opacity': 0,
-						'top': d3.event.layerY + 20 + 'px',
-						'left': d3.event.layerX + 20 + 'px'
-					})
+			onMouseMove: function (tooltip) {
+				return function () {
+					if (d3.event.target.nodeName == 'path' || d3.event.target.nodeName == 'g') {
+						tooltip.style({
+							'opacity': 0.8,
+							'top': d3.event.layerY + 20 + 'px',
+							'left': d3.event.layerX + 20 + 'px'
+						})
+					} else {
+						tooltip.style({
+							'opacity': 0,
+							'top': d3.event.layerY + 20 + 'px',
+							'left': d3.event.layerX + 20 + 'px'
+						})
+					}
 				}
 			}
 		};
@@ -104,7 +105,6 @@ var GLOBAL = window;
 				return [bbox.x + bbox.width/2, bbox.y + bbox.height/2];
 			}
 		};
-
 		this.common = {
 			showDistrictsWithCities: function showDistrictsWithCities () {
 				d3.selectAll('#map-Russia > .markers .with_cities_marker').each(function (data,index) {
@@ -457,6 +457,76 @@ var GLOBAL = window;
 				}
 			}
 		};
+		this.districtCallbacks = {
+			mouseenter: function (dictionary) {
+				return function(d) {
+					var _this = d3.select(this)
+					if ( _this.classed( 'zoom_2' ) ) {return false } else {
+						tooltip.node().innerHTML = dictionary[this.id];
+						_this
+							.attr('fill', attributes.colors.hover);
+					}
+				}
+			} ,
+			mouseleave: function(d) {
+				var _this = d3.select(this)
+				_this
+					.attr('fill', function (d) {
+						return d.color
+					});
+			},
+			click: function(d) {
+				this.parentNode.appendChild(this);
+				var _this = d3.select(this)
+				_this.target = d3.select(d3.event.target.parentNode)
+				if ( !_this.classed('zoom_2') ) {
+					functions.common.zoomIn(_this)
+				}
+			}
+		};
+		this.regionCallbacks = {
+			mouseenter: function(dictionary) {
+				return	function(d) {
+					var _this = d3.select(this)
+					_this.parent = d3.select(this.parentNode.parentNode)
+
+					if (_this.datum().zoom === 3) {
+						return false
+					}
+
+					if ( !_this.parent.classed('zoom_2') ) { return false } else {
+						tooltip.node().innerHTML = dictionary[this.id];
+						_this.attr('fill', _this.parent.data()[0].color)
+							.attr('fill', attributes.colors.hover);
+					}
+				}
+			},
+			mouseleave: function(d) {
+				var _this = d3.select(this)
+				_this.parent = d3.select(this.parentNode.parentNode)
+
+				if (_this.datum().zoom === 3) {
+					return false
+				}
+
+				if ( !_this.parent.classed('zoom_2') ) { return false } else {
+					_this
+						.attr('fill',null)
+				}
+			},
+			click: function(d) {
+				var _this = d3.select(this)
+				_this.parent = d3.select(this.parentNode.parentNode)
+				if (_this.datum().zoom === 3) {
+					window.location.href = _this.datum().link;
+				}
+
+				if ( !_this.parent.classed('zoom_2') ) { return false } else {
+					this.parentNode.appendChild(this);
+					functions.common.zoomIn(_this)
+				}
+			}
+		};
 		this.ready = function (error, map, Russia, dictionary) {
 			if (error) throw error
 
@@ -484,75 +554,10 @@ var GLOBAL = window;
 			}
 			Russia = prepareRussiaDataObject()
 			/* Object Russia is ready */
+			//districtCallbacks.mouseenter(dictionary)
+			var districtCallbacks = functions.districtCallbacks;
 
-			var districtCallbacks = {
-				'mouseenter': function(d) {
-					var _this = d3.select(this)
-					if ( _this.classed( 'zoom_2' ) ) {return false } else {
-						tooltip.node().innerHTML = dictionary[this.id];
-						_this
-							.attr('fill', attributes.colors.hover);
-					}
-				},
-				'mouseleave': function(d) {
-					var _this = d3.select(this)
-					_this
-						.attr('fill', function (d) {
-							return d.color
-						});
-				},
-				'click': function(d) {
-					this.parentNode.appendChild(this);
-					var _this = d3.select(this)
-					_this.target = d3.select(d3.event.target.parentNode)
-					if ( !_this.classed('zoom_2') ) {
-						functions.common.zoomIn(_this)
-					}
-				}
-			};
-			var regionCallbacks = {
-				'mouseenter': function(d) {
-					var _this = d3.select(this)
-					_this.parent = d3.select(this.parentNode.parentNode)
-
-					if (_this.datum().zoom === 3) {
-						return false
-					}
-
-					if ( !_this.parent.classed('zoom_2') ) { return false } else {
-						tooltip.node().innerHTML = dictionary[this.id];
-						_this.attr('fill', _this.parent.data()[0].color)
-							.attr('fill', attributes.colors.hover);
-					}
-				},
-				'mouseleave': function(d) {
-					var _this = d3.select(this)
-					_this.parent = d3.select(this.parentNode.parentNode)
-
-					if (_this.datum().zoom === 3) {
-						return false
-					}
-
-					if ( !_this.parent.classed('zoom_2') ) { return false } else {
-						_this
-							.attr('fill',null)
-					}
-				},
-				'click': function(d) {
-					var _this = d3.select(this)
-					_this.parent = d3.select(this.parentNode.parentNode)
-					if (_this.datum().zoom === 3) {
-						window.location.href = _this.datum().link;
-					}
-
-					if ( !_this.parent.classed('zoom_2') ) { return false } else {
-						this.parentNode.appendChild(this);
-
-						functions.common.zoomIn(_this)
-
-					}
-				}
-			};
+			var regionCallbacks = functions.regionCallbacks;
 
 
 			/* Drowind with d3.data */
@@ -573,7 +578,7 @@ var GLOBAL = window;
 					},
 					'transform' : 'translate(0,0)scale(1,1)'
 				})
-				.on('mouseenter', 	districtCallbacks.mouseenter )
+				.on('mouseenter', 	districtCallbacks.mouseenter(dictionary) )
 				.on('mouseleave', 	districtCallbacks.mouseleave )
 				.on('click',		districtCallbacks.click )
 				.each(function(d) {
@@ -592,7 +597,7 @@ var GLOBAL = window;
 							'class': 'region',
 							'transform': 'translate(0,0)scale(1,1)'
 						})
-						.on('mouseenter', 	regionCallbacks.mouseenter)
+						.on('mouseenter', 	regionCallbacks.mouseenter(dictionary))
 						.on('mouseleave', 	regionCallbacks.mouseleave)
 						.on('click', 		regionCallbacks.click)
 						.each(function(d2) {
@@ -705,13 +710,15 @@ var GLOBAL = window;
 	var attributes = iMap.attributes
 	var functions = iMap.functions
 
+	//INIT UI
+	var mapWrapper = d3.select("#map-wrapper")
+	var tooltip = mapWrapper.append(attributes.tooltip.el)
+		.attr(attributes.tooltip.attrs)
+
 	var svg = mapWrapper
 		.append(attributes.svg.el)
 		.attr(attributes.svg.attrs)
-		.on('mousemove', functions.svg.onMouseMove);
-
-	var tooltip = mapWrapper.append(attributes.tooltip.el)
-		.attr(attributes.tooltip.attrs)
+		.on('mousemove', functions.svg.onMouseMove(tooltip));
 
 	var zoomOutButton = svg.append("image")
 		.attr(iMap.attributes.zoomOutButton.attrs({
@@ -737,12 +744,13 @@ var GLOBAL = window;
 	var path = d3.geo.path().projection(projection);
 
 	for (f in functions.d3) d3[f] = functions.d3[f]
+	//INIT UI END
 
 	/* Reading map file and data, then START */
 	queue()
-	.defer(d3.json, "./sources/russia_1e-7sr.json")
-	.defer(d3.json, "./sources/rus_structure_d3data.json")
-	.defer(d3.json, "./sources/dictionary.json")
-	.await(functions.ready);
+		.defer(d3.json, "./sources/russia_1e-7sr.json")
+		.defer(d3.json, "./sources/rus_structure_d3data.json")
+		.defer(d3.json, "./sources/dictionary.json")
+		.await(functions.ready);
 
 })(GLOBAL);
