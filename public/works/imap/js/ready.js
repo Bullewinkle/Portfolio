@@ -69,18 +69,22 @@ var GLOBAL = window;
 		this.svg = {
 			onMouseMove: function (tooltip) {
 				return function () {
-					if (d3.event.target.nodeName == 'path' || d3.event.target.nodeName == 'g') {
-						tooltip.style({
-							'opacity': 0.8,
-							'top': d3.event.layerY + 20 + 'px',
-							'left': d3.event.layerX + 20 + 'px'
-						})
-					} else {
-						tooltip.style({
-							'opacity': 0,
-							'top': d3.event.layerY + 20 + 'px',
-							'left': d3.event.layerX + 20 + 'px'
-						})
+					switch (d3.event.target.nodeName) {
+						case 'path':
+						case 'g':
+							tooltip.style({
+								'opacity': 0.8,
+								'top': d3.event.layerY + 20 + 'px',
+								'left': d3.event.layerX + 20 + 'px'
+							})
+							break;
+						default:
+							tooltip.style({
+								'opacity': 0,
+								'top': d3.event.layerY + 20 + 'px',
+								'left': d3.event.layerX + 20 + 'px'
+							})
+							break;
 					}
 				}
 			}
@@ -462,6 +466,119 @@ var GLOBAL = window;
 							})
 					}
 				}
+			},
+			draw: function (svg, Russia, dictionary) {
+				/* Drowind with d3.data */
+				return (function () {
+					svg.append('g')
+						.attr({
+							'class': 'districts',
+						})
+						.selectAll('g').data(Russia)
+
+						/* 	Drow districts	 */
+						.enter().append('g').attr({
+							'id': function(d) {
+								return d.districtName;
+							},
+							'class' : 'district',
+							'fill' : function(d) {
+								return d.color;
+							},
+							'transform' : 'translate(0,0)scale(1,1)'
+						})
+						.on('mouseenter', 	functions.districtCallbacks.mouseenter(dictionary) )
+						.on('mouseleave', 	functions.districtCallbacks.mouseleave )
+						.on('click',		functions.districtCallbacks.click )
+						.each(function(d) {
+							d3.select(this).append('g').attr({
+								'class': 'markers'
+							})
+							/* 	Drow regions */
+							d3.select(this).append('g').attr({
+								'class': 'regions'
+							})
+								.selectAll('g').data(d.regions)
+								.enter().append('g').attr({
+									'id': function(d) {
+										return d.regionName;
+									},
+									'class': 'region',
+									'transform': 'translate(0,0)scale(1,1)'
+								})
+								.on('mouseenter', 	functions.regionCallbacks.mouseenter(dictionary))
+								.on('mouseleave', 	functions.regionCallbacks.mouseleave)
+								.on('click', 		functions.regionCallbacks.click)
+								.each(function(d2) {
+
+									var regions = d3.select(this).selectAll('path').data(d2.shape).enter().append('path')
+										.attr({
+											'd': function(d) {
+												return d;
+											}
+										});
+
+									var city = d3.select(this)
+										.selectAll('g')
+										.data(d2.cities)
+										.enter()
+										.append('g').attr({
+											'class': 'city',
+											transform: function(d) {
+												var coords = projection([d.lon, d.lat]);
+												return "translate(" + coords[0].toFixed() + ',' + coords[1].toFixed() + ")";
+											}
+										});
+
+									if ( city.size() > 0 ) {
+										city.node().parentNode.parentNode.appendChild(city.node().parentNode);
+
+										if ( d3.select(this.parentNode.parentNode).classed('with_cities') === false ) {
+											var thisPar = d3.select(this.parentNode.parentNode)
+											thisPar.classed('with_cities',true )
+										}
+
+										if ( d3.select(this).classed('with_cities') === false ) {
+											d3.select(this).classed('with_cities',true)
+
+											d3.select(this)
+												.append('g')
+												.attr({
+													'class': 'with_cities_marker'
+												})
+												.append("image")
+												.attr({
+													'class' : 'with_cities_marker_image'
+												})
+												.attr("xlink:href", attributes.common.markerIconPath)
+												.attr("width", 42)
+												.attr("height", 42)
+
+										}
+									}
+									city = city.style("cursor", "pointer")
+										.append('a')
+										.attr({
+											'class': 'city_link',
+											'xlink:href':function (d) {
+												return d.link
+											}
+										})
+
+									city.append('circle')
+										.attr({
+											'r': 5
+										});
+
+									city.append('svg:text')
+										.text(function(d) {
+											return d.cityName;
+										})
+										.attr("x", 10)
+								});
+						});
+					return svg
+				})()
 			}
 		}
 		this.districtCallbacks = {
@@ -561,120 +678,8 @@ var GLOBAL = window;
 			}
 			Russia = prepareRussiaDataObject()
 			/* Object Russia is ready */
-			//districtCallbacks.mouseenter(dictionary)
-			var districtCallbacks = functions.districtCallbacks;
 
-			var regionCallbacks = functions.regionCallbacks;
-
-
-			/* Drowind with d3.data */
-			var districts = svg.append('g')
-				.attr({
-					'class': 'districts',
-				})
-				.selectAll('g').data(Russia)
-
-				/* 	Drow districts	 */
-				.enter().append('g').attr({
-					'id': function(d) {
-						return d.districtName;
-					},
-					'class' : 'district',
-					'fill' : function(d) {
-						return d.color;
-					},
-					'transform' : 'translate(0,0)scale(1,1)'
-				})
-				.on('mouseenter', 	districtCallbacks.mouseenter(dictionary) )
-				.on('mouseleave', 	districtCallbacks.mouseleave )
-				.on('click',		districtCallbacks.click )
-				.each(function(d) {
-					d3.select(this).append('g').attr({
-						'class': 'markers'
-					})
-					/* 	Drow regions */
-					d3.select(this).append('g').attr({
-						'class': 'regions'
-					})
-						.selectAll('g').data(d.regions)
-						.enter().append('g').attr({
-							'id': function(d) {
-								return d.regionName;
-							},
-							'class': 'region',
-							'transform': 'translate(0,0)scale(1,1)'
-						})
-						.on('mouseenter', 	regionCallbacks.mouseenter(dictionary))
-						.on('mouseleave', 	regionCallbacks.mouseleave)
-						.on('click', 		regionCallbacks.click)
-						.each(function(d2) {
-
-							var regions = d3.select(this).selectAll('path').data(d2.shape).enter().append('path')
-								.attr({
-									'd': function(d) {
-										return d;
-									}
-								});
-
-							var city = d3.select(this)
-								.selectAll('g')
-								.data(d2.cities)
-								.enter()
-								.append('g').attr({
-									'class': 'city',
-									transform: function(d) {
-										var coords = projection([d.lon, d.lat]);
-										return "translate(" + coords[0].toFixed() + ',' + coords[1].toFixed() + ")";
-									}
-								});
-
-							if ( city.size() > 0 ) {
-								city.node().parentNode.parentNode.appendChild(city.node().parentNode);
-
-								if ( d3.select(this.parentNode.parentNode).classed('with_cities') === false ) {
-									var thisPar = d3.select(this.parentNode.parentNode)
-									thisPar.classed('with_cities',true )
-								}
-
-								if ( d3.select(this).classed('with_cities') === false ) {
-									d3.select(this).classed('with_cities',true)
-
-									d3.select(this)
-										.append('g')
-										.attr({
-											'class': 'with_cities_marker'
-										})
-										.append("image")
-										.attr({
-											'class' : 'with_cities_marker_image'
-										})
-										.attr("xlink:href", attributes.common.markerIconPath)
-										.attr("width", 42)
-										.attr("height", 42)
-
-								}
-							}
-							city = city.style("cursor", "pointer")
-								.append('a')
-								.attr({
-									'class': 'city_link',
-									'xlink:href':function (d) {
-										return d.link
-									}
-								})
-
-							city.append('circle')
-								.attr({
-									'r': 5
-								});
-
-							city.append('svg:text')
-								.text(function(d) {
-									return d.cityName;
-								})
-								.attr("x", 10)
-						});
-				});
+			functions.map.draw(svg, Russia, dictionary)
 
 			var districtsMarkers = svg.append('g').attr('class','markers')
 			var districtMarkersData = [];
