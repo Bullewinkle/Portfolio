@@ -1,5 +1,5 @@
 /*	TODO
-	[]	-	Fix zoomIn(235) and zoomOut(394) functions
+	[x]	-	Fix zoomIn(235) and zoomOut(394) functions
 	[]	-	Optimaze zoomIn(235) and zoomOut(394) functions, especially zoomIn
 	[]	-	Make zoomOut by click outside
 	[]	-	Remove zoomOut button
@@ -51,12 +51,13 @@ var GLOBAL = window;
 
 		};
 		this.zoomOutButton = {
-			attrs: function (opts) {
+			attrs: function () {
+				console.log(svg)
 				var attrs = {
 					id: 'zoomOutButton',
-					x: opts.x,
-					y: opts.y,
-					xlinkhref: attributes.common.zoomOutIconPath,
+					//x : svg.node().getBBox().x,
+					//y : svg.node().getBBox().y + svg.node().getBBox().height,
+					"xlink:href": attributes.common.zoomOutIconPath,
 					width: 42,
 					height: 42
 				}
@@ -440,10 +441,10 @@ var GLOBAL = window;
 						svg.currentZoomedElement.datum().zoom = 1
 						svg.currentZoomedElement = svg.currentZoomedElement.parent
 
-						setTimeout(hideCities( svg.currentZoomedElement ),200)
-						showRegionsWithCities( svg.currentZoomedElement )
+						setTimeout(functions.map.hideCities( svg.currentZoomedElement ),200)
+						functions.map.showRegionsWithCities( svg.currentZoomedElement )
 					} else if ( svg.currentZoomedElement.datum().zoom === 2 ) {
-						hideRegionsWithCities( svg.currentZoomedElement )
+						functions.map.hideRegionsWithCities( svg.currentZoomedElement )
 						svg.currentZoomedElement.datum().zoom = 1
 						svg.currentZoomedElement.classed('zoom_2',false)
 						setTimeout(function () {
@@ -454,7 +455,7 @@ var GLOBAL = window;
 									'stroke-width': '0'
 								})
 						},100)
-						showDistrictsWithCities()
+						functions.map.showDistrictsWithCities()
 
 						zoomOutButton
 							.transition()
@@ -723,20 +724,17 @@ var GLOBAL = window;
 	var functions = iMap.functions
 
 	//INIT UI
-	var mapWrapper = d3.select("#map-wrapper")
-	var tooltip = mapWrapper.append(attributes.tooltip.el)
+	var map = d3.select("#map-wrapper")
+	var tooltip = map.append(attributes.tooltip.el)
 		.attr(attributes.tooltip.attrs)
 
-	var svg = mapWrapper
+	var svg = map
 		.append(attributes.svg.el)
 		.attr(attributes.svg.attrs)
 		.on('mousemove', functions.svg.onMouseMove(tooltip));
 
 	var zoomOutButton = svg.append("image")
-		.attr(iMap.attributes.zoomOutButton.attrs({
-			x : svg.node().getBBox().x,
-			y : svg.node().getBBox().y + svg.node().getBBox().height,
-		}))
+		.attr(iMap.attributes.zoomOutButton.attrs())
 		.style({
 			'display': 'none',
 			'opacity':'0',
